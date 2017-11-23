@@ -13,6 +13,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         initView();
+
+        // TODO: 2017/11/23 UI 单元测试
     }
 
     private void initView() {
