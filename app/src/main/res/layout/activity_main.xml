@@ -29,10 +29,20 @@
         />
 
     <TextView
+        android:id="@+id/release_note"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="release version 1.0.0"
+        android:text="Release version 1.0.0"
         app:layout_constraintTop_toBottomOf="@id/feature_display"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1.1.0 new TV"
+        app:layout_constraintTop_toBottomOf="@id/release_note"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         />
