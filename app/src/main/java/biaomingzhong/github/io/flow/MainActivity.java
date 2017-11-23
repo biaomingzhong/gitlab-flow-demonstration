@@ -3,7 +3,6 @@ package biaomingzhong.github.io.flow;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.View;
 import android.widget.TextView;
 import biaomingzhong.github.io.support.XTextUtil;
 
@@ -38,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
      */
     @Override protected void onResume() {
         super.onResume();
-        Log.e(TAG, XTextUtil.format(MESSAGE_TEMPLATE, "log here."));
+        Log.e(TAG, XTextUtil.format(MESSAGE_TEMPLATE, "this log changed."));
         tvContent.setText(XTextUtil.format(MESSAGE_TEMPLATE, "Activity resumed."));
     }
 }
