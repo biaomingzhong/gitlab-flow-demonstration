@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.TextView;
+import biaomingzhong.github.io.support.XLogUtil;
 import biaomingzhong.github.io.support.XTextUtil;
 
 public class MainActivity extends AppCompatActivity {
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
      */
     @Override protected void onResume() {
         super.onResume();
+      
         Log.e(TAG, XTextUtil.format(MESSAGE_TEMPLATE, "this log changed."));
         tvContent.setText(XTextUtil.format(MESSAGE_TEMPLATE, "Activity resumed."));
     }
