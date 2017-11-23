@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
      */
     @Override protected void onResume() {
         super.onResume();
-
+      
         Log.e(TAG, XTextUtil.format(MESSAGE_TEMPLATE, "this log changed."));
         tvContent.setText(XTextUtil.format(MESSAGE_TEMPLATE, "Activity resumed."));
     }
