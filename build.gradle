@@ -25,3 +25,24 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+def getVersionName(int versionCode) {
+    int majorChangeCode;
+    int mediumChangeCode;
+    int miniChangeCode;
+    majorChangeCode = versionCode / 1000;
+    mediumChangeCode = (versionCode / 100).toBigInteger() % 10;
+    miniChangeCode = versionCode % 100;
+    String sdkVersionName = majorChangeCode + "." + mediumChangeCode + "." + miniChangeCode;
+    return sdkVersionName;
+}
+
+
+ext {
+    buildToolsVersion = "26.0.2"
+    compileSdkVersion = 26
+    minSdkVersion = 15
+    targetSdkVersion = 23
+    versionCode = 1000
+    versionName = getVersionName versionCode
+}
