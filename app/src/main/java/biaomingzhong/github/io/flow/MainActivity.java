@@ -2,10 +2,18 @@ package biaomingzhong.github.io.flow;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 import biaomingzhong.github.io.support.XTextUtil;
 
 public class MainActivity extends AppCompatActivity {
+
+    private final static String TAG = "flow.MainActivity.java";
+
+    private final static String MESSAGE_TEMPLATE = "Message from developer: %s";
+
+    private TextView tvContent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,8 +28,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        TextView tvContent = findViewById(R.id.content);
+        tvContent = findViewById(R.id.content);
 
-        tvContent.setText(XTextUtil.format("Message from developer: %s", "Hello world!"));
+        tvContent.setText(XTextUtil.format(MESSAGE_TEMPLATE, "Hello world!"));
+    }
+
+    /**
+     * resume 的时候打一个日志，并修改 Hello
+     */
+    @Override protected void onResume() {
+        super.onResume();
+        Log.e(TAG, XTextUtil.format(MESSAGE_TEMPLATE, "log here."));
+        tvContent.setText(XTextUtil.format(MESSAGE_TEMPLATE, "Activity resumed."));
     }
 }
